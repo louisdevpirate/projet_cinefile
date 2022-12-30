@@ -6,11 +6,20 @@
 			{% block title %}Welcome!
 			{% endblock %}
 		</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link
-		rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 		{% block stylesheets %}
-			{{ encore_entry_link_tags('app') }}
+			<link rel="stylesheet" href="{{ asset('css/main.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/header.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/nav.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/form.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Limelight&display=swap">
 		{% endblock %}
 
 		{% block javascripts %}
@@ -18,6 +27,80 @@
 		{% endblock %}
 	</head>
 	<body>
-		{% block body %}{% endblock %}
+		{% block body %}
+			<!-- Header contenant le titre h1, et l'image principale avec l'overlay -->
+			<header>
+
+				<div class="title">
+
+					<h1 href="#" class="logo">// cine .file</h1>
+
+				</div>
+
+				<div class="header-img">
+
+					<img src="/images/209121.png" alt="Jules Winnfield from Pulp Fiction" title="Jules Winnfield from Pulp Fiction" style="width:100%;" class="jules">
+
+					<div class="image-overlay">
+
+						<div class="image-title">"Le cinéma, c'est la Vérité 24 fois par seconde."</div>
+
+						<p class="image-description">Jean-Luc Godard</p>
+
+					</div>
+
+				</div>
+
+			</header>
+
+			<!-- Navbar avec les différents boutons de navigation -->
+			<nav class="navbar">
+
+				<button>
+					<i class="fa-solid fa-bars"></i>
+				</button>
+
+				<button>
+					<i class="fa-solid fa-film"></i>
+				</button>
+
+				<button>
+					<i class="fa-solid fa-plus"></i>
+				</button>
+
+				<button>
+					<i class="fa-solid fa-ellipsis"></i>
+				</button>
+
+			</nav>
+
+			<!-- Formulaire pour ajouter un film -->
+			<div class="formulary">
+
+				<form action="" method="GET" class="form-film">
+
+					<label for="new-film">Ajoute un film à la liste !</label>
+
+					<input type="text" id="new-film" class="new-film" placeholder="Titre">
+
+					<input type="text" class="new-author" placeholder="Auteur">
+
+					<input type="text" class="new-date" placeholder="Date de sortie">
+
+					<input type="text" class="new-genre" placeholder="Genre (Comédie, Horreur, Aventure...)">
+
+
+					<input type="submit" class="submit" value="Ajouter">
+
+				</form>
+
+			</div>
+
+			<!-- Div pour l'effet de transition -->
+			<div class="transition"></div>
+
+			<!-- Footer qui contient les liens des différents réseaux sociaux -->
+			<footer></footer>
+		{% endblock %}
 	</body>
 </html>
