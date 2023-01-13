@@ -6,6 +6,7 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Film;
 
 class HomeController extends AbstractController
 {
@@ -14,7 +15,42 @@ class HomeController extends AbstractController
     #[Route('/cinefile', name: 'app_cinefile')]
     public function cinefile(): Response
     {
-        return $this->render('menu.html.twig');
+        // Trop compliqué pour l'instant, mais il n'y aura pas d'autre choix que d'utiliser une boucle lorsqu'il y aura plus de films à ajouter 
+        // $films = array();
+        // $titles = array("The Shining", "Le Parrain", "The Dark Knight", "Pulp Fiction", "Le Bon, la Brute et le Truand");
+        // $dates = array(1980, 1972, 2008, 1994, 1966);
+
+        // for ($i = 0; $i < count($titles); $i++) {
+        //     $films[] = new Film($titles[$i], $dates[$i]);
+        // }
+
+        $film1 = new Film();
+        $film1->setTitle('The Shining');
+        $film1->setDate('1980');
+
+        $film2 = new Film();
+        $film2->setTitle('Le Parrain');
+        $film2->setDate('1972');
+
+        $film3 = new Film();
+        $film3->setTitle('The Dark Knight');
+        $film3->setDate('2008');
+
+        $film4 = new Film();
+        $film4->setTitle('Pulp Fiction');
+        $film4->setDate('1994');
+
+        $film5 = new Film();
+        $film5->setTitle('Le Bon, la Brute et le Truand');
+        $film5->setDate('1966');
+
+        return $this->render('menu.html.twig', [
+            'film1' => $film1,
+            'film2' => $film2,
+            'film3' => $film3,
+            'film4' => $film4,
+            'film5' => $film5,
+        ]);
     }
 
     // Annotation qui permet à Symfony de retrouver quelle route correspond à quelle fonction 
