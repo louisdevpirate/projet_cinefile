@@ -31,6 +31,17 @@ class Film
         return $this->date;
     }
 
+    public function setAuthor(string $author)
+    {
+        $this->author = $author;
+    }
+
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+
 
     public function bornOrNot()
     {

@@ -15,7 +15,7 @@ class HomeController extends AbstractController
     #[Route('/cinefile', name: 'app_cinefile')]
     public function cinefile(): Response
     {
-        // Trop compliqué pour l'instant, mais il n'y aura pas d'autre choix que d'utiliser une boucle lorsqu'il y aura plus de films à ajouter 
+        // Trop compliqué pour l'instant, je n'y arrive pas, mais il n'y aura pas d'autre choix que d'utiliser une boucle lorsqu'il y aura plus de films à ajouter 
         // $films = array();
         // $titles = array("The Shining", "Le Parrain", "The Dark Knight", "Pulp Fiction", "Le Bon, la Brute et le Truand");
         // $dates = array(1980, 1972, 2008, 1994, 1966);
@@ -27,22 +27,31 @@ class HomeController extends AbstractController
         $film1 = new Film();
         $film1->setTitle('The Shining');
         $film1->setDate('1980');
+        $film1->setAuthor('Stanley Kubrick');
 
         $film2 = new Film();
         $film2->setTitle('Le Parrain');
         $film2->setDate('1972');
+        $film2->setAuthor('Francis Ford Coppola');
+
 
         $film3 = new Film();
         $film3->setTitle('The Dark Knight');
         $film3->setDate('2008');
+        $film3->setAuthor('Christopher Nolan');
+
 
         $film4 = new Film();
         $film4->setTitle('Pulp Fiction');
         $film4->setDate('1994');
+        $film4->setAuthor('Quentin Tarantino');
+
 
         $film5 = new Film();
-        $film5->setTitle('Le Bon, la Brute et le Truand');
+        $film5->setTitle('The Good, the Bad and the Ugly');
         $film5->setDate('1966');
+        $film5->setAuthor('Sergio Leone');
+
 
         return $this->render('menu.html.twig', [
             'film1' => $film1,

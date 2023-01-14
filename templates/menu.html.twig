@@ -11,6 +11,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link
 		rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="preconnect" href="">
 
 		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 		{% block stylesheets %}
@@ -22,6 +23,9 @@
 			<link rel="stylesheet" href="{{ asset('css/favorite.css') }}">
 
 			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Limelight&display=swap">
+			<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
 		{% endblock %}
 
 		{% block javascripts %}
@@ -76,7 +80,7 @@
 
 			</nav>
 
-			<h2 class="favorite-films">Mes 5 films préférés :</h2>
+			<h2 class="favorite-films">Mes 5 Films</h2>
 
 			<div class="film-container">
 				<div class="film" style="background-image: url('../images/The-Shining.jpg')">
@@ -84,7 +88,8 @@
 						<div class="film-overlay">
 							<p class="film-title">{{ film1.title }}</p>
 							<p class="film-release-date">{{ film1.date }}</p>
-							<p>({{ film1.bornOrNot }})</p>
+							<p class="film-author">{{ film1.author }}</p>
+							<p class="born">({{ film1.bornOrNot }})</p>
 						</div>
 					</div>
 				</div>
@@ -93,7 +98,8 @@
 						<div class="film-overlay">
 							<p class="film-title">{{ film2.title }}</p>
 							<p class="film-release-date">{{ film2.date }}</p>
-							<p>({{ film2.bornOrNot }})</p>
+							<p class="film-author">{{ film2.author }}</p>
+							<p class="born">({{ film2.bornOrNot }})</p>
 						</div>
 					</div>
 				</div>
@@ -102,7 +108,8 @@
 						<div class="film-overlay">
 							<p class="film-title">{{ film3.title }}</p>
 							<p class="film-release-date">{{ film3.date }}</p>
-							<p>({{ film3.bornOrNot }})</p>
+							<p class="film-author">{{ film3.author }}</p>
+							<p class="born">({{ film3.bornOrNot }})</p>
 						</div>
 					</div>
 				</div>
@@ -111,7 +118,8 @@
 						<div class="film-overlay">
 							<p class="film-title">{{ film4.title }}</p>
 							<p class="film-release-date">{{ film4.date }}</p>
-							<p>({{ film4.bornOrNot }})</p>
+							<p class="film-author">{{ film4.author }}</p>
+							<p class="born">({{ film4.bornOrNot }})</p>
 						</div>
 					</div>
 				</div>
@@ -120,7 +128,8 @@
 						<div class="film-overlay">
 							<p class="film-title">{{ film5.title }}</p>
 							<p class="film-release-date">{{ film5.date }}</p>
-							<p>({{ film5.bornOrNot }})</p>
+							<p class="film-author">{{ film5.author }}</p>
+							<p class="born">({{ film5.bornOrNot }})</p>
 						</div>
 					</div>
 				</div>
