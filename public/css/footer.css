@@ -1,6 +1,5 @@
 .transition {
     height: 500px;
-    background-image: url(/public/images/Laser_en_construction.png);
     background-size: 140% 100%;
     background-attachment: fixed;
 }

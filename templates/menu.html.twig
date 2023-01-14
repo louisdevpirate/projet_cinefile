@@ -19,6 +19,8 @@
 			<link rel="stylesheet" href="{{ asset('css/nav.css') }}">
 			<link rel="stylesheet" href="{{ asset('css/form.css') }}">
 			<link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/favorite.css') }}">
+
 			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Limelight&display=swap">
 		{% endblock %}
 
@@ -74,20 +76,56 @@
 
 			</nav>
 
-			<div class="favorite-films">
-				<p>Mes 5 films préférés sont :
-					{{ film1.title }},
-					{{ film2.title }},
-					{{ film3.title }},
-					{{ film4.title }},
-					{{ film5.title }}
-					{# <ul>
-											{% for film in films %}
-												<li>{{ film.titles }}</li>
-											{% endfor %}
-										</ul> #}
-				</p>
+			<h2 class="favorite-films">Mes 5 films préférés :</h2>
+
+			<div class="film-container">
+				<div class="film" style="background-image: url('../images/The-Shining.jpg')">
+					<div class="film-poster">
+						<div class="film-overlay">
+							<p class="film-title">{{ film1.title }}</p>
+							<p class="film-release-date">{{ film1.date }}</p>
+							<p>({{ film1.bornOrNot }})</p>
+						</div>
+					</div>
+				</div>
+				<div class="film" style="background-image: url('../images/The-Godfather.jpg')">
+					<div class="film-poster">
+						<div class="film-overlay">
+							<p class="film-title">{{ film2.title }}</p>
+							<p class="film-release-date">{{ film2.date }}</p>
+							<p>({{ film2.bornOrNot }})</p>
+						</div>
+					</div>
+				</div>
+				<div class="film" style="background-image: url('../images/The-Dark-Knight.jpg')">
+					<div class="film-poster">
+						<div class="film-overlay">
+							<p class="film-title">{{ film3.title }}</p>
+							<p class="film-release-date">{{ film3.date }}</p>
+							<p>({{ film3.bornOrNot }})</p>
+						</div>
+					</div>
+				</div>
+				<div class="film" style="background-image: url('../images/Pulp-Fiction.jpg')">
+					<div class="film-poster">
+						<div class="film-overlay">
+							<p class="film-title">{{ film4.title }}</p>
+							<p class="film-release-date">{{ film4.date }}</p>
+							<p>({{ film4.bornOrNot }})</p>
+						</div>
+					</div>
+				</div>
+				<div class="film" style="background-image: url('../images/The-Good-the-Bad-and-the-Ugly.jpg')">
+					<div class="film-poster">
+						<div class="film-overlay">
+							<p class="film-title">{{ film5.title }}</p>
+							<p class="film-release-date">{{ film5.date }}</p>
+							<p>({{ film5.bornOrNot }})</p>
+						</div>
+					</div>
+				</div>
 			</div>
+
 
 			<!-- Formulaire pour ajouter un film -->
 			<div class="formulary">
@@ -112,10 +150,14 @@
 			</div>
 
 			<!-- Div pour l'effet de transition -->
-			<div class="transition"></div>
+			<div class="transition" style="background-image: url(../images/Laser_en_construction.png);"></div>
 
 			<!-- Footer qui contient les liens des différents réseaux sociaux -->
 			<footer></footer>
-		{% endblock %}
-	</body>
+
+			{% endblock %}
+
+			
+		</body>
+
 </html>
